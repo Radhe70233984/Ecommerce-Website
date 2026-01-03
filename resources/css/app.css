@@ -1,0 +1,15 @@
+/* Custom styles for Laravel Ecommerce Website */
+/* Using Bootstrap 5 via CDN for styling */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
