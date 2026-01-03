@@ -110,7 +110,7 @@ A fully functional ecommerce website built with Laravel 12, featuring product ma
 
 ## Authentication Setup
 
-This project requires Laravel Breeze for authentication. To install:
+This project requires Laravel Breeze for full authentication functionality. To install:
 
 ```bash
 composer require laravel/breeze --dev
@@ -118,6 +118,8 @@ php artisan breeze:install blade
 npm install && npm run build
 php artisan migrate
 ```
+
+**Note:** Without installing Breeze, authentication features (login/register) will not be available. However, you can still browse products and categories. Cart and order features require authentication to function properly.
 
 ## Database Schema
 

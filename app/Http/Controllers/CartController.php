@@ -48,6 +48,11 @@ class CartController extends Controller
 
     public function update(Request $request, Cart $cart)
     {
+        // Check if the cart item belongs to the authenticated user
+        if ($cart->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $validated = $request->validate([
             'quantity' => 'required|integer|min:1'
         ]);
@@ -59,6 +64,11 @@ class CartController extends Controller
 
     public function remove(Cart $cart)
     {
+        // Check if the cart item belongs to the authenticated user
+        if ($cart->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $cart->delete();
         return redirect()->route('cart.index')->with('success', 'Item removed from cart.');
     }
